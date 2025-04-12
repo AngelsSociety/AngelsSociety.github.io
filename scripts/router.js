@@ -6,6 +6,12 @@ function loadPage(path) {
       })
       .then(html => {
         document.getElementById('content').innerHTML = html;
+
+        
+      // 💡 여기서 캐러셀 초기화 시도
+      if (path === 'about') {
+        initCarousel();
+      }
       })
       .catch(err => {
         console.error(err);
