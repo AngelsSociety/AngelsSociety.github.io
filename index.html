@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>천사들의 모임</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumSquareRound.css">
+
+
+  <style>
+    
+    /* ===== 공통 ===== */
+    :root{
+      --primary:#5ca76d;
+      --text:#333;
+      --bg:#fafafa;
+      --max-w:960px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+    body{background:var(--bg);color:var(--text);line-height:1.65;}
+    a{text-decoration:none;color:inherit;}
+    h1,h2{line-height:1.25;font-family: 'NanumSquareRound', sans-serif;}
+    /* ===== 헤더 & 네비 ===== */
+    header{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.06);position:sticky;top:0;z-index:100;}
+    nav{max-width:var(--max-w);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;}
+    nav a.logo{font-size:1.3rem;font-weight:700;color:var(--primary);}
+    nav ul{display:flex;gap:1.3rem;list-style:none;}
+    nav li{position:relative;}
+    nav a.menu-link{font-weight:600;padding:.4rem .2rem;border-bottom:2px solid transparent;transition:.2s;}
+    nav a.menu-link:hover,nav a.menu-link:focus{border-color:var(--primary);color:var(--primary);}
+    /* 햄버거 */
+    #menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--primary);cursor:pointer;}
+    /* ===== 히어로 ===== */
+    .hero{
+      background:url('https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=1600&q=80') center/cover;
+      min-height:25vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      position:relative;
+    }
+    .hero::before{/* 어두운 오버레이로 텍스트 가독성 확보 */
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);
+    }
+    .hero h1{position:relative;z-index:1;font-size:clamp(1.8rem,6vw,3.5rem);padding:0 1rem;}
+    /* ===== 컨테이너 ===== */
+    .container{max-width:var(--max-w);margin:auto;padding:3rem 1.2rem;}
+    section h2{font:font-size:1.8rem;margin-bottom:1.2rem;color:var(--primary);}
+    ul.list{list-style:disc;padding-left:1.2rem;font-size:1.05rem;line-height:1.9;}
+    /* ===== 푸터 ===== */
+    footer{background:#333;color:#ddd;padding:2rem 1rem;text-align:center;font-size:.9rem;}
+    footer a{color:#9ed0a6;}
+    /* ===== 반응형 ===== */
+    @media(max-width:720px){
+      nav ul{/* 드롭다운 메뉴 */
+        position:absolute;top:60px;left:0;right:0;background:#fff;flex-direction:column;gap:0;
+        overflow:hidden;max-height:0;transition:max-height .35s ease;
+        border-top:1px solid #eee;
+      }
+      nav ul.show{max-height:310px;}
+      nav li{border-bottom:1px solid #eee;}
+      nav a.menu-link{display:block;padding:1rem;}
+      #menu-toggle{display:block;}
+      /* 컨텐츠 패딩 축소 */
+      .container{padding:2.3rem 1rem;}
+      /* 타이포 조금 축소 */
+      section h2{font-size:1.55rem;}
+    }
+    @media(max-width:480px){
+      .hero{min-height:45vh;}
+      .container{padding:2rem .9rem;}
+      footer{font-size:.8rem;}
+    }
+    
+    p, li, ul, ol {
+    font-family: 'NanumSquareRound', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">천사들의 모임</a>
+    <button id="menu-toggle" aria-label="메뉴 열기/닫기">☰</button>
+    <ul id="menu">
+      <li><a href="#home" class="menu-link">홈</a></li>
+      <li><a href="#purpose" class="menu-link">설립목적</a></li>
+      <li><a href="#programs" class="menu-link">주요사업</a></li>
+      <li><a href="#org" class="menu-link">기구현황</a></li>
+      <li><a href="#donation" class="menu-link">기부금내역</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- 홈 -->
+  <section id="home" class="hero">
+    <h1>전국 지역에서 유기동물을 사랑하는 사람들의 연대모임</h1>
+  </section>
+
+  <!-- 설립목적 -->
+  <section id="purpose" class="container">
+    <h2>설립목적</h2>
+    <ul class="list">
+      <li>전국 지역에서 유기동물을 사랑하는 사람들의 연대모임</li>
+      <li>유기동물의 복지 및 권리향상과 권익보호 등을 목적으로 함.</li>
+    </ul>
+  </section>
+
+  <!-- 주요사업 -->
+  <section id="programs" class="container">
+    <h2>주요사업</h2>
+    <ul class="list">
+      <li>유기동물 보호소 및 각 대학 유기동물관련 동아리 지원사업</li>
+      <li>유기동물 구조 및 치료 사업</li>
+      <li>동물보호 캠페인, 교육사업</li>
+      <li>동물보호 기금 마련을 위한 모금 사업</li>
+      <li>목적 사업의 경비를 충당하기 위한 수익 사업</li>
+    </ul>
+  </section>
+
+  <!-- 기구현황 -->
+  <section id="org" class="container">
+    <h2>기구현황</h2>
+    <p>내용 준비 중입니다.</p>
+  </section>
+
+  <!-- 기부금내역 -->
+  <section id="donation" class="container">
+    <h2>기부금내역</h2>
+    <p>내용 준비 중입니다.</p>
+  </section>
+</main>
+
+<footer>
+  <p>천사들의 모임 | 경기도 남양주시 진접읍 금강로 927번길 34 (1층)<br>
+     대표전화 0000‑0000 | 이메일 angelsociety@example.org</p>
+  <p>© 2022‑2025 천사들의 모임. All rights reserved.</p>
+</footer>
+
+<script>
+  /* 모바일 메뉴 토글 */
+  const btn=document.getElementById('menu-toggle');
+  const menu=document.getElementById('menu');
+  btn.addEventListener('click',()=>menu.classList.toggle('show'));
+</script>
+</body>
+</html>
