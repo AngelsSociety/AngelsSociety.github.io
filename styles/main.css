@@ -121,15 +121,16 @@
       .contentImg{max-width: 80%}
       /* ===== 푸터 ===== */
       footer{background:#333;color:#ddd;padding:2rem 1rem;text-align:center;font-size:.9rem;}
-      footer a{color:#9ed0a6;}
-      /* ===== 반응형 ===== */
+      footer a{color:#E6B25C;}
+      /* ===== 반응형 ===== 720px 이하*/
       @media(max-width:720px){
         nav ul{/* 드롭다운 메뉴 */
           position:absolute;top:60px;left:0;right:0;background:#fff;flex-direction:column;gap:0;
-          overflow:hidden;max-height:0;transition:max-height .35s ease;
+          overflow:hidden;max-height:0;
           border-top:1px solid #eee;
+          z-index: 1000; /* 메뉴가 캐러셀 위에 올 수 있도록 z-index 값 증가 */
         }
-        nav ul.show{max-height:310px;}
+        nav ul.show{max-height:310px;display:block;}
         nav li{border-bottom:1px solid #eee;}
         nav a.menu-link{display:block;padding:1rem;}
         #menu-toggle{display:block;}
@@ -143,8 +144,6 @@
         .container{padding:2rem .9rem;}
         footer{font-size:.8rem;}
       }
-
-
       
       p, li, ul, ol {
       font-family: 'NanumSquareRound', sans-serif;
