@@ -12,6 +12,9 @@ function loadPage(path) {
       if (path === 'about') {
         initCarousel();
       }
+      if(path === 'donations' || path === 'programs'){
+        initGridImage();
+      }
       })
       .catch(err => {
         console.error(err);
@@ -22,12 +25,21 @@ function loadPage(path) {
   window.addEventListener('DOMContentLoaded', () => {
     loadPage('about'); // 첫 화면에 기본 페이지 로드
   });
-  
-  // 링크 클릭 시
-  document.querySelectorAll("a[data-page]").forEach(link => {
-    link.addEventListener("click", (e) => {
+
+  // 모든 링크 클릭 시
+  document.body.addEventListener('click', (e) => {
+    // nav에서 클릭된 경우
+    if (e.target && e.target.matches("nav a[data-page]")) {
       e.preventDefault();
-      const page = link.getAttribute("data-page");
+      const page = e.target.getAttribute("data-page");
       loadPage(page);
-    });
+    }
+  
+    // #content 내에서 클릭된 경우 (동적으로 로드된 링크)
+    if (e.target && e.target.matches("#content a[data-page]")) {
+      e.preventDefault();
+      const page = e.target.getAttribute("data-page");
+      loadPage(page);
+    }
   });
+  

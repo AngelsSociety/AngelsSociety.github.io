@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumSquareRound.css">
 
     <link rel="stylesheet" href="styles/main.css">
-      
+    <link rel="stylesheet" href="styles/orgchart.css">
+    <link rel="stylesheet" href="styles/gridImage.css">
     
     <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
@@ -16,17 +17,17 @@
     <header>
       
       <div class="header-inner">
-        <a href="#home" class="logo">
+        <a href="#" data-page="about" class="logo">
           <img src="img/logo.jpg" alt="천사들의 모임 로고">
         </a>
         <nav>
           <button id="menu-toggle" aria-label="메뉴 열기/닫기">☰</button>
           <ul id="menu">
-            <li><a href="#home" class="menu-link">홈</a></li>
-            <li><a href="#purpose" class="menu-link">설립목적</a></li>
-            <li><a href="#programs" class="menu-link">주요사업</a></li>
-            <li><a href="#org" class="menu-link">기구현황</a></li>
-            <li><a href="#donation" class="menu-link">기부금내역</a></li>
+            <li><a href="#" data-page="about" class="menu-link">홈</a></li>
+            <li><a href="#" data-page="objectives" class="menu-link">설립목적</a></li>
+            <li><a href="#" data-page="programs" class="menu-link">주요사업</a></li>
+            <li><a href="#" data-page="org" class="menu-link">기구현황</a></li>
+            <li><a href="#" data-page="donations" class="menu-link">기부금내역</a></li>
           </ul>
         </nav>
       </div>
@@ -44,6 +45,8 @@
     </footer>
 
     <script src="scripts/carousel.js">
+    </script>
+    <script src="scripts/gridImage.js">
     </script>
     <script src="scripts/router.js">
     </script>
