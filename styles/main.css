@@ -147,4 +147,11 @@
       
       p, li, ul, ol {
       font-family: 'NanumSquareRound', sans-serif;
+      } 
+      .contentTxt{
+        font-family: 'NanumSquareRound', sans-serif;
+        } 
+      .card{
+        /*background-color:#E6B25C;
+        margin:auto;*/
       }

@@ -11,6 +11,7 @@ function loadPage(path) {
       // 💡 여기서 캐러셀 초기화 시도
       if (path === 'about') {
         initCarousel();
+        initGridImage();
       }
       if(path === 'donations' || path === 'programs'){
         initGridImage();
